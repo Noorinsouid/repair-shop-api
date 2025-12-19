@@ -1,98 +1,153 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+README.md – Mini-Projet DS Backend
+Repair Shop Management API (NestJS & MySQL)
+1. Contexte du DS
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Ce projet est réalisé dans le cadre du DS Backend (NestJS + MySQL).
+L’objectif est de développer une API REST permettant de gérer un atelier de réparation de smartphones.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+L’API doit gérer :
 
-## Description
+les utilisateurs (Administrateur et Technicien),
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+les pièces détachées,
 
-## Project setup
+les appareils,
 
-```bash
-$ npm install
-```
+les interventions de réparation,
 
-## Compile and run the project
+tout en respectant des règles métier précises et une sécurité basée sur JWT.
 
-```bash
-# development
-$ npm run start
+2. Technologies utilisées
 
-# watch mode
-$ npm run start:dev
+NestJS (framework backend)
 
-# production mode
-$ npm run start:prod
-```
+TypeORM (ORM)
 
-## Run tests
+MySQL (base de données – XAMPP)
 
-```bash
-# unit tests
-$ npm run test
+JWT (authentification & autorisation)
 
-# e2e tests
-$ npm run test:e2e
+class-validator (validation des données)
 
-# test coverage
-$ npm run test:cov
-```
+3. Lancement du projet
+Installation
+npm install
 
-## Deployment
+Démarrage
+npm run start:dev
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Le serveur démarre sur :
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+http://localhost:3000
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+4. Authentification & Rôles
 
-## Resources
+L’API utilise une authentification JWT.
 
-Check out a few resources that may come in handy when working with NestJS:
+Rôles disponibles
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+ADMIN
 
-## Support
+TECH
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Chaque requête protégée nécessite un Bearer Token dans Postman.
 
-## Stay in touch
+5. Description des modules (selon le DS)
+🔹 Module 1 – Authentification & Utilisateurs
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Fonctionnalités :
 
-## License
+Inscription d’un utilisateur
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Connexion
+
+Génération d’un token JWT
+
+Gestion des rôles (ADMIN / TECH)
+
+Routes :
+
+POST /auth/register
+
+POST /auth/login
+
+GET /auth/me
+
+👉 Le token JWT est obligatoire pour accéder aux autres modules.
+
+🔹 Module 2 – Gestion des pièces détachées (ADMIN uniquement)
+
+Fonctionnalités :
+
+Création d’une pièce détachée
+
+Consultation du stock
+
+Mise à jour
+
+Suppression
+
+⚠️ Règle métier importante :
+
+Un technicien n’a pas le droit de créer ou modifier une pièce détachée.
+
+Routes :
+
+POST /parts
+
+GET /parts
+
+GET /parts/:id
+
+PATCH /parts/:id
+
+DELETE /parts/:id
+
+🔹 Module 3 – Gestion des appareils
+
+Fonctionnalités :
+
+Enregistrement d’un appareil à réparer
+
+Consultation des appareils
+
+Suppression
+
+Routes :
+
+POST /devices
+
+GET /devices
+
+DELETE /devices/:id
+
+Chaque appareil possède un statut :
+
+PENDING
+
+REPAIRING
+
+READY
+
+🔹 Module 4 – Gestion des interventions
+
+Fonctionnalités :
+
+Création d’une intervention par un technicien
+
+Association d’une intervention à :
+
+un appareil
+
+un technicien
+
+Utilisation optionnelle d’une pièce détachée
+
+Mise à jour automatique du stock
+
+Mise à jour du statut de l’appareil
+
+Route :
+
+POST /interventions
